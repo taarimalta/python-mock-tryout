@@ -8,7 +8,10 @@ def is_weekday():
 
     return (0 <= today.weekday() < 5)
 
-
+"""
+Output depends on weekday
+True
+"""
 print(is_weekday())
 
 from unittest.mock import Mock
