@@ -1,4 +1,5 @@
-""" This tutorial is about setting return value for methods"""
+""" This tutorial is about setting return value for methods
+"""
 
 from datetime import datetime
 

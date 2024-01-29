@@ -1,4 +1,5 @@
-""" This tutorial is about validating calls"""
+""" This tutorial is about validating calls
+"""
 
 
 from unittest.mock import Mock
