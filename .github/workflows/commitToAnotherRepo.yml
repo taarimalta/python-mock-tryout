@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - feature/bogus
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: taarimalta/deleteThis
+          ref: 'main'
+          token:  ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "taarimalta@gmail.com"
+      - name: Add new file
+        run: |
+          ls -al
+          touch hello.txt
+          git add hello.txt
+          git commit -m "hello added"
+      - run: git push origin main
