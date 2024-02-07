@@ -23,9 +23,7 @@ jobs:
           git config user.email "taarimalta@gmail.com"
       - name: Add new file
         run: |
-          ls -al
           mkdir -p ${{ env.FOLDER_NAME }}
-          ls -al
           cat >> "${{ env.FOLDER_NAME }}/${{ env.FILE_NAME }}" << 'END'
           {
           "committer": "${{ github.actor }}",
@@ -35,7 +33,7 @@ jobs:
           
           }
           END
-          ls -al
+          find ./changes
       - name: Commit to git
         run: |
           ls -al
