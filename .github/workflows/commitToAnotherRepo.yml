@@ -20,8 +20,8 @@ jobs:
       - name: Add new file
         run: |
           ls -al
-          
-          cat >> hello.txt << 'END'
+          mkdir -p changes/${{ github.repository }}/$(date +%Y/%m/%d)
+          cat >> $(date +%H-%M-%S-%N).json << 'END'
           {
           "committer": "${{ github.actor }}",
           "repository": "${{ github.repository }}",
