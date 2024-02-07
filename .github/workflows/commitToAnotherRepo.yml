@@ -20,7 +20,7 @@ jobs:
       - name: Add new file
         run: |
           ls -al
-          cat >> ~/dir/newDir/yamlFiles/testing.yaml << 'END'
+          cat >> hello.txt << 'END'
           {
           "committer": "${{ github.actor }}",
           "repository": "${{ github.repository }}",
