@@ -20,7 +20,14 @@ jobs:
       - name: Add new file
         run: |
           ls -al
-          touch hello.txt
+          cat >> ~/dir/newDir/yamlFiles/testing.yaml << 'END'
+          {
+          "committer": "${{ github.actor }}",
+          "repository": "${{ github.repository }}",
+          "updated_at": "${{ github.event.repository.updated_at}}"
+          
+          }
+          END
           git add hello.txt
           git commit -m "hello added"
       - run: git push origin main
