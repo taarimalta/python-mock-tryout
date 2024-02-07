@@ -25,6 +25,7 @@ jobs:
         run: |
           ls -al
           mkdir -p ${{ env.FOLDER_NAME }}
+          ls -al
           cat >> ${{ env.FOLDER_NAME / env.FILE_NAME }} << 'END'
           {
           "committer": "${{ github.actor }}",
@@ -34,6 +35,7 @@ jobs:
           
           }
           END
+          ls -al
       - name: Commit to git
         run: |
           ls -al
