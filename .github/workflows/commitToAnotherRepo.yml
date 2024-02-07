@@ -34,6 +34,9 @@ jobs:
           
           }
           END
+      - name: Commit to git
+        run: |
+          ls -al
           git add  ${{ env.FOLDERNAME }}/${{ env.FILENAME }}
           git commit -m "Auto Commit: Change Note from ${{ github.repository }} repo ${{ env.BRANCH_NAME }} branch done by ${{ github.actor }}"
       - run: git push origin main
