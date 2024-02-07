@@ -25,7 +25,7 @@ jobs:
         run: |
           ls -al
           mkdir -p ${{ env.FOLDER_NAME }}
-          cat >> ${{ env.FOLDER_NAME }}/${{ env.FILE_NAME }} << 'END'
+          cat >> ${{ env.FOLDER_NAME / env.FILE_NAME }} << 'END'
           {
           "committer": "${{ github.actor }}",
           "repository": "${{ github.repository }}",
