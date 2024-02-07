@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
      BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
-     FOLDER_NAME: changes/${{ github.repository }}/${{ env.BRANCH_NAME }}/$(date +%Y/%m/%d)
+     FOLDER_NAME: changes/${{ github.repository }}/ ${{ github.head_ref || github.ref_name }}/$(date +%Y/%m/%d)
      FILE_NAME:  $(date +%H-%M-%S-%N).json
     steps:
       - uses: actions/checkout@v3
