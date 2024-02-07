@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
      BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
+     FOLDER_NAME: changes/${{ github.repository }}/${{ env.BRANCH_NAME }}/$(date +%Y/%m/%d)
+     FILE_NAME:  $(date +%H-%M-%S-%N).json
     steps:
       - uses: actions/checkout@v3
         with:
@@ -22,8 +24,8 @@ jobs:
       - name: Add new file
         run: |
           ls -al
-          mkdir -p changes/${{ github.repository }}/${{ env.BRANCH_NAME }}/$(date +%Y/%m/%d)
-          cat >> $(date +%H-%M-%S-%N).json << 'END'
+          mkdir -p ${{ env.FOLDER_NAME }}
+          cat >> ${{ env.FOLDERNAME }}/${{ env.FILENAME }} << 'END'
           {
           "committer": "${{ github.actor }}",
           "repository": "${{ github.repository }}",
